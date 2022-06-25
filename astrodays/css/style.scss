@@ -1,0 +1,183 @@
+$sp: 680px;  // スマホ
+@mixin sp {
+    @media (max-width: ($sp)) {
+      @content;
+    }
+}
+
+
+
+body {
+    background-color: #2620FF;
+    
+    header {
+        height: 130px;
+        width: 100%;
+        background-color: #2620FF;
+        @include sp {
+            height: 82px;
+        }
+        // position: fixed;
+        // top: 0;
+        // left: 0;
+        // .wakuzawa_logo {
+        //     height: 130px;
+        //     width: 420px;
+        //     margin: 0 auto;
+        //     position: relative;
+        //     display: none;
+        //     @include sp {
+        //         height: 82px;
+        //         width: 260px;    
+        //     }
+        //     a {
+        //         position: absolute;
+        //         bottom: 0;
+        //         img {
+        //             width: 100%;
+        //         }
+    
+        //     }
+
+        // }
+
+        .astrodays_logo {
+            height: 130px;
+            width: 420px;
+            margin: 0 auto;
+            position: relative;
+            display: none;
+            @include sp {
+                height: 82px;
+                width: 260px;    
+            }
+            h1 {
+                position: absolute;
+                bottom: 0;
+                color: white;
+                font-size: 60px; 
+                width: 420px;
+                text-align: center;   
+                @include sp {
+                    font-size: 30px; 
+                    width: 260px;    
+                }    
+            }
+
+        }
+
+    }//header
+
+    main {
+        width: 100%;
+        position: absolute;
+        top: 180px;
+        @include sp {
+            top: 112px;
+        }
+        .astro_img {
+            width: 460px;
+            margin: 0 auto;
+            display: none;
+            @include sp {
+                width: 200px;
+            }
+            img {
+                width: 100%;
+            }
+        }
+
+        .shop_button {
+            height: 60px;
+            width: 460px;
+            margin: 40px auto 0 auto;
+            display: none;
+            @include sp {
+                width: 200px;
+            }
+            div {
+                width: 150px;
+                height: 60px;
+                margin: 0 0 0 auto;
+                @include sp {
+                    width: 90px;
+                    height: 50px;
+                }
+                a {
+                    text-align: right;
+    
+                    h2 {
+                        color: white;
+                        font-size: 50px;
+                        width: 150px;
+                        height: 60px;
+                        line-height: 50px;
+                        text-align: center;
+                        border: 1px solid white;
+                        @include sp {
+                            font-size: 30px;
+                            width: 90px;
+                            height: 50px;
+                            line-height: 40px;    
+                        }
+                    }
+                }    
+            }
+        }
+
+        .menu {
+            width: 520px;
+            margin: 70px auto 0 auto;
+            @include sp {
+                width: 300px;
+                margin: 40px auto 0 auto;
+            }
+            div {
+                position: relative;
+                display: none;
+                .active {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                    transition: 0.5s; // ゆっくり
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+                a {
+                    img {
+                        width: 100%;
+                        margin-bottom: 20px;
+        
+                    }
+                }
+            }
+        }
+
+    }
+
+    footer {
+        width: 100%;
+        position: absolute;
+        top: 1020px;
+        @include sp {
+            top: 400px;
+        }
+        .copyright {
+            width: 520px;
+            margin: 20px auto 0 auto;
+            text-align: right;
+            @include sp {
+                width: 300px;
+            }
+            img {
+                width: 260px;
+                @include sp {
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+}
